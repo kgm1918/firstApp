@@ -60,8 +60,17 @@ class ViewController: UIViewController {
             label.text = "Enter two numbers"
             return
         }
-        let divide = numberOne / numberTwo
-        label.text = String(divide)
+        guard numberTwo != 0 else {
+              label.text = "Cannot divide by zero"
+              return
+          }
+          
+      if numberOne < numberTwo {
+          label.text = "\(numberOne)/\(numberTwo)"
+      } else {
+          label.text = String(numberOne / numberTwo)
+      }
+        
     }
 }
 
